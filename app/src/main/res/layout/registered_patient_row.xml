@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_5sdp"
+    android:background="@color/white"
+    android:padding="@dimen/_15sdp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgDr"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:src="@drawable/ic_pic_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="@dimen/_10sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/default_dot"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/imgDr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/green" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layDrName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tvEdit"
+        app:layout_constraintStart_toEndOf="@+id/imgDr"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvPatientName"
+            style="@style/semi_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:text="sdfdf sdfsfs "
+            android:textAlignment="textStart"
+            android:textColor="@color/dialog_text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layGender"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/tvPatientName"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgGender"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/image_dot"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvGender"
+                style="@style/regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:text="@string/female"
+                android:textColor="@color/edittext_hint"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toEndOf="@+id/imgGender"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvEdit"
+        android:layout_marginTop="@dimen/_3sdp"
+        style="@style/regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/_5sdp"
+        android:text="@string/edit"
+        android:textColor="@color/login_title_color"
+        android:textSize="@dimen/_10ssp"
+        app:drawableStartCompat="@drawable/ic_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPatientId"
+        style="@style/regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        android:text="@string/patient_id_3206437689012"
+        android:textAlignment="textStart"
+        android:textColor="@color/dialog_text_color"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toEndOf="@+id/imgDr"
+        app:layout_constraintTop_toBottomOf="@+id/layDrName" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tvViewHistory"
+        style="@style/regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:background="@drawable/light_blue_rounded_border"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="@string/view_history"
+        android:textColor="@color/login_title_color"
+        app:layout_constraintEnd_toStartOf="@+id/btnCreateCase"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDOB" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCreateCase"
+        style="@style/regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:background="@drawable/active_button_bg"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="@string/create_a_case"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/tvViewHistory"
+        app:layout_constraintTop_toBottomOf="@+id/tvDOB" />
+
+    <ImageView
+        android:id="@+id/imgConsultation"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_1sdp"
+        android:src="@drawable/ic_register_date"
+        app:layout_constraintStart_toEndOf="@+id/imgDr"
+        app:layout_constraintTop_toBottomOf="@+id/tvPatientId"
+        app:tint="@color/login_title_color" />
+
+    <TextView
+        android:id="@+id/tvDOB"
+        style="@style/regular"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:text="@string/_20_apr_2022"
+        android:textAlignment="center"
+        android:textColor="@color/opacity_dialog_text_color"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toEndOf="@+id/imgConsultation"
+        app:layout_constraintTop_toBottomOf="@+id/tvPatientId" />
+
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="@dimen/_1sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_7sdp"
+        android:background="@color/divider_opacity"
+        app:layout_constraintStart_toEndOf="@+id/tvDOB"
+        app:layout_constraintTop_toBottomOf="@+id/tvPatientId" />
+
+    <ImageView
+        android:id="@+id/imgPhone"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_2sdp"
+        android:src="@drawable/ic_call"
+        app:layout_constraintStart_toEndOf="@+id/viewDivider"
+        app:layout_constraintTop_toBottomOf="@+id/tvPatientId"
+        app:tint="@color/login_title_color" />
+
+    <TextView
+        android:id="@+id/tvPhoneNumber"
+        style="@style/regular"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:text="@string/_8264272061"
+        android:textAlignment="center"
+        android:textColor="@color/opacity_dialog_text_color"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toEndOf="@+id/imgPhone"
+        app:layout_constraintTop_toBottomOf="@+id/tvPatientId" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

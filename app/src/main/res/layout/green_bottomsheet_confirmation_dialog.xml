@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/top_corner_white_rounded"
+    android:padding="@dimen/_10sdp"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    tools:context=".activities.LoginActivity">
+
+    <TextView
+        android:id="@+id/tvConfirmation"
+        style="@style/regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_50sdp"
+        android:layout_marginVertical="@dimen/_20sdp"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        android:text="@string/are_you_sure_you_want_to_exit_room_don_t_worry_your_booking_will_not_be_cancelled"
+        android:textAlignment="center"
+        android:textColor="@color/dialog_text_color"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvCancel"
+        style="@style/lexend_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginVertical="@dimen/_20sdp"
+        android:padding="@dimen/_10sdp"
+        android:text="@string/cancel"
+        android:textColor="@color/edittext_hint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvConfirmation" />
+
+    <TextView
+        android:id="@+id/btnConfirm"
+        style="@style/lexend_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_20sdp"
+        android:background="@drawable/green_alpha_round_bg"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="@string/yes_i_am_sure"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvConfirmation" />
+</androidx.constraintlayout.widget.ConstraintLayout>

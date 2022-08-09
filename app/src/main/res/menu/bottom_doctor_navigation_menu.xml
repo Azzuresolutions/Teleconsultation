@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/doctorHomeFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_doctor_home"
+        android:title="@string/menu_home" />
+    <item
+        android:id="@+id/action_appointments"
+        android:enabled="true"
+        android:icon="@drawable/ic_appointments"
+        android:title="@string/appointments" />
+    <item
+        android:id="@+id/action_profile"
+        android:enabled="true"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/menu_profile" />
+</menu>

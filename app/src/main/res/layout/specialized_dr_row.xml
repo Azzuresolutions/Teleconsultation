@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingVertical="@dimen/_7sdp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgDr"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/dr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_17sdp"
+        android:layout_marginHorizontal="@dimen/_3sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        android:background="@color/white"
+        android:elevation="@dimen/_5sdp"
+        android:padding="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_17sdp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/imgRating"
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:src="@drawable/ic_rating_doctor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvRating"
+                style="@style/regular"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_height="wrap_content"
+                android:alpha="0.6"
+                android:text="0.0"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgRating"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvDrName"
+        style="@style/semi_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:text="@string/dr_banerjee"
+        android:textAlignment="textStart"
+        android:textColor="@color/dialog_text_color"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintBottom_toTopOf="@+id/tempView"
+        app:layout_constraintStart_toEndOf="@+id/imgDr" />
+
+    <View
+        android:id="@+id/tempView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDrOnlineState"
+        style="@style/regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:alpha="0.6"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        android:text="@string/online"
+        android:textAlignment="textStart"
+        android:textColor="@color/green"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintStart_toEndOf="@+id/imgDr"
+        app:layout_constraintTop_toBottomOf="@+id/tempView" />
+
+    <ImageView
+        android:id="@+id/imgHospitalDot"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_marginVertical="@dimen/_2sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/image_dot"
+        app:layout_constraintStart_toEndOf="@+id/tvDrOnlineState"
+        app:layout_constraintTop_toBottomOf="@+id/tempView" />
+
+    <TextView
+        android:id="@+id/tvHospitalName"
+        style="@style/regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_1sdp"
+        android:alpha="0.6"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        android:text="@string/care_hospital"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintStart_toEndOf="@+id/imgHospitalDot"
+        app:layout_constraintTop_toBottomOf="@+id/tempView" />
+
+    <ImageView
+        android:id="@+id/imgExperienceDot"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_marginVertical="@dimen/_2sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/image_dot"
+        app:layout_constraintStart_toEndOf="@+id/tvHospitalName"
+        app:layout_constraintTop_toBottomOf="@+id/tempView" />
+
+    <TextView
+        android:id="@+id/tvExperience"
+        style="@style/regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_1sdp"
+        android:alpha="0.6"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        android:text="@string/_5_yrs_experience"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintStart_toEndOf="@+id/imgExperienceDot"
+        app:layout_constraintTop_toBottomOf="@+id/tempView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

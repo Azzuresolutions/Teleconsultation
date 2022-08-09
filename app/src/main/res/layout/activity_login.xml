@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_15sdp"
+    tools:context=".activities.LoginActivity">
+
+    <include
+        android:id="@+id/backLay"
+        layout="@layout/layout_back_arrow_actionbar" />
+
+    <TextView
+        android:id="@+id/tvLoginTitle"
+        style="@style/semi_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_20sdp"
+        android:text="@string/login_or_register_to_swasthya_ingit"
+        android:textAlignment="textStart"
+        android:textColor="@color/header_font_color"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backLay" />
+
+
+    <TextView
+        android:id="@+id/tvSubTitle"
+        style="@style/regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_25sdp"
+        android:text="@string/enter_your_mobile_number"
+        android:textColor="@color/login_title_color"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginTitle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:background="@drawable/edittext_bg"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubTitle">
+
+        <TextView
+            android:id="@+id/etCountryCode"
+            style="@style/regular_edittext"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:text="@string/_91"
+            android:maxLength="4"
+            android:textAlignment="center">
+
+            <requestFocus />
+        </TextView>
+
+        <View
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="@dimen/_15sdp"
+            android:background="@color/edittext_border" />
+
+        <EditText
+            android:id="@+id/etMobileNumber"
+            style="@style/regular_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:hint="@string/mobile_number"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="10"
+            android:textAlignment="textStart" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnContinue"
+        style="@style/lexend_medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector_bg"
+        android:padding="@dimen/_10sdp"
+        android:text="@string/text_continue"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

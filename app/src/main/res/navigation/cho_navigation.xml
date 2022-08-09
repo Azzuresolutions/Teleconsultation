@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/choHomeFragment">
+
+    <fragment
+        android:id="@+id/choHomeFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.cho.ChoHomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_cho_home">
+
+        <action
+            android:id="@+id/action_create_patient_cho"
+            app:destination="@id/action_add_patient"
+            app:popUpTo="@id/choHomeFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/action_registered"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.cho.ChoRegisteredFragment"
+        android:label="ChoRegisteredFragment"
+        tools:layout="@layout/fragment_cho_registered">
+        <action
+            android:id="@+id/action_create_patient_cho"
+            app:destination="@id/action_add_patient" />
+        <action
+            android:id="@+id/action_create_case"
+            app:destination="@id/createCaseFragment" />
+
+        <action
+            android:id="@+id/action_case_history"
+            app:destination="@id/caseHistory" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/action_cases"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.cho.ChoCasesFragment"
+        android:label="CasesFragment"
+        tools:layout="@layout/fragment_cho_cases">
+        <action
+            android:id="@+id/action_update_case"
+            app:destination="@id/createCaseFragment" />
+
+        <action
+            android:id="@+id/action_waiting_room"
+            app:destination="@+id/waiting_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/action_profile"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.cho.ChoProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_dr_profile">
+        <action
+            android:id="@+id/action_notification"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_edit_cho_profile"
+            app:destination="@+id/editChoProfileFragment" />
+
+        <action
+            android:id="@+id/action_view_cho_profile"
+            app:destination="@id/viewChoProfileFragment" />
+
+        <action
+            android:id="@+id/action_change_password"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.patient.NotificationFragment"
+        android:label="NotificationFragment"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/viewChoProfileFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.cho.ViewChoProfileFragment"
+        android:label="ViewChoProfileFragment"
+        tools:layout="@layout/fragment_view_cho_profile">
+        <action
+            android:id="@+id/action_edit_cho_profile"
+            app:destination="@+id/editChoProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editChoProfileFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.cho.EditChoProfileFragment"
+        android:label="EditDoctorProfileFragment"
+        tools:layout="@layout/fragment_doctor_edit_profile" />
+
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.cho.ChoChangePasswordFragment"
+        android:label="ChangePasswordFragment"
+        tools:layout="@layout/fragment_change_password" />
+
+    <fragment
+        android:id="@+id/createCaseFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.cho.CreateCaseFragment"
+        android:label="CreateCaseFragment"
+        tools:layout="@layout/fragment_create_case">
+
+        <argument
+            android:name="patientData"
+            app:argType="com.volumetree.newswasthyaingitopd.model.responseData.cho.ChoPatientData"
+            app:nullable="true" />
+
+        <argument
+            android:name="consultationId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_select_dr"
+            app:destination="@id/fragment_select_dr" />
+
+        <action
+            android:id="@+id/action_create_case_cases"
+            app:destination="@id/action_cases"
+            app:popUpToInclusive="false" />
+
+    </fragment>
+
+    <!--    <fragment-->
+    <!--        android:id="@+id/allergyFragment"-->
+    <!--        android:name="com.volumetree.newswasthyaingitopd.fragments.common.AllergyFragment"-->
+    <!--        android:label="AllergyFragment"-->
+    <!--        tools:layout="@layout/fragment_allergy">-->
+
+    <!--        <argument-->
+    <!--            android:name="apiType"-->
+    <!--            app:argType="long"-->
+    <!--            app:nullable="false" />-->
+
+    <!--    </fragment>-->
+
+
+    <fragment
+        android:id="@+id/chatCallFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.common.ChatCallFragment"
+        android:label="ChatCallFragment"
+        tools:layout="@layout/fragment_chat_call" />
+
+    <fragment
+        android:id="@+id/ratingFragment"
+        android:name="com.volumetree.newswasthyaingitopd.activities.RatingActivity"
+        android:label="RatingFragment"
+        tools:layout="@layout/activity_ratings" />
+
+
+    <fragment
+        android:id="@+id/caseHistory"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.cho.ChoCasesHistoryFragment"
+        android:label="ChoCasesHistoryFragment"
+        tools:layout="@layout/fragment_cho_case_history">
+        <argument
+            android:name="patientData"
+            app:argType="com.volumetree.newswasthyaingitopd.model.responseData.cho.ChoPatientData"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_create_case"
+            app:destination="@id/createCaseFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/action_add_patient"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.cho.AddNewPatientChoFragment"
+        android:label="AddPatient"
+        tools:layout="@layout/fragment_create_patient_cho">
+        <argument
+            android:name="patientId"
+            android:defaultValue="0"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_create_case"
+            app:destination="@id/createCaseFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_select_dr"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.cho.SelectDoctorFragment"
+        android:label="SelectDoctor"
+        tools:layout="@layout/fragment_select_dr_cho">
+        <argument
+            android:name="doctorId"
+            app:argType="string" />
+
+        <argument
+            android:name="patientInfoId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_calling"
+            app:destination="@+id/fragment_calling" />
+
+        <action
+            android:id="@+id/action_waiting_room"
+            app:destination="@+id/waiting_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_calling"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.common.CallingFragment"
+        android:label="CallingFragment"
+        tools:layout="@layout/fragment_calling">
+
+        <action
+            android:id="@+id/action_waiting_room"
+            app:destination="@+id/waiting_fragment" />
+
+        <argument
+            android:name="specialityName"
+            app:argType="string" />
+
+        <argument
+            android:name="doctorData"
+            app:argType="com.volumetree.newswasthyaingitopd.model.responseData.cho.ConsultationOnlineDoctorResponse"
+            app:nullable="true" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/waiting_fragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.patient.WaitingFragment"
+        android:label="WaitingFragment"
+        tools:layout="@layout/fragment_waiting_room">
+
+        <action
+            android:id="@+id/action_waiting_room2"
+            app:destination="@id/waiting_fragment2"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+
+        <argument
+            android:name="consultationData"
+            app:argType="com.volumetree.newswasthyaingitopd.model.responseData.cho.ConsultationOnlineDoctorResponse" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/waiting_fragment2"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.patient.WaitingFragment2"
+        android:label="WaitingFragment2"
+        tools:layout="@layout/fragment_waiting_room2">
+
+        <argument
+            android:name="consultationData"
+            app:argType="com.volumetree.newswasthyaingitopd.model.responseData.cho.ConsultationOnlineDoctorResponse"
+            app:nullable="true" />
+
+        <argument
+            android:name="patientData"
+            app:argType="com.volumetree.newswasthyaingitopd.model.responseData.cho.DoctorQueueData$DoctorQueueDataList"
+            app:nullable="true" />
+
+    </fragment>
+</navigation>

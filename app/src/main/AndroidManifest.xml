@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.volumetree.newswasthyaingitopd">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <application
+        android:name=".application.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.NewSwasthyaIngitOPD"
+        tools:targetApi="m">
+        <activity
+            android:name=".activities.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan"
+            tools:targetApi="n">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.SplashInfoActivity" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.OtpActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.patient.CreateProfileActivity"
+            android:label="@string/build_your_health_profile" />
+        <activity android:name=".activities.patient.DashBoardActivity" />
+        <activity android:name=".activities.SelectLoginTypeActivity" />
+        <activity android:name=".activities.doctor.DoctorDashBoardActivity" />
+        <activity android:name=".activities.doctor.DoctorIntroActivity" />
+        <activity android:name=".activities.cho.ChoLoginActivity" />
+
+        <activity android:name=".activities.cho.ChoDashBoardActivity" />
+
+        <activity
+            android:name=".activities.ChatCallActivity2"
+            android:autoRemoveFromRecents="true"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:launchMode="singleInstance"
+            android:supportsPictureInPicture="true"
+            android:taskAffinity=".ChatCallActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity android:name=".activities.ChatCallActivity" />
+
+        <activity android:name=".activities.RatingActivity" />
+
+        <receiver
+            android:name=".utils.ConnectivityReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths_app" />
+        </provider>
+    </application>
+
+</manifest>

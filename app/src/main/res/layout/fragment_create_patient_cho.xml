@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/layToolbar"
+        layout="@layout/layout_back_arrow_title_actionbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/_10sdp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgPatientPic"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:src="@drawable/ic_pic_placeholder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnUploadProfilePicture"
+                style="@style/lexend_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/active_button_bg"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/upload_profile_picture"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgPatientPic" />
+
+            <TextView
+                android:id="@+id/tvBasicInfo"
+                style="@style/lexend_medium_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:text="@string/basic_info"
+                android:textColor="@color/dialog_text_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnUploadProfilePicture" />
+
+            <TextView
+                android:id="@+id/tvFirstName"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:text="@string/first_name"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBasicInfo" />
+
+            <EditText
+                android:id="@+id/etFirstName"
+                style="@style/regular_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/enter_first_name"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="32"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvFirstName" />
+
+            <TextView
+                android:id="@+id/tvLastName"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/last_name"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etFirstName" />
+
+            <EditText
+                android:id="@+id/etLastName"
+                style="@style/regular_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/enter_last_name"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="32"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLastName" />
+
+            <TextView
+                android:id="@+id/tvEmail"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/email"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etMobile" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                style="@style/regular_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/enter_email"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+            <TextView
+                android:id="@+id/tvAddressInfo"
+                style="@style/lexend_medium_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:text="@string/address_details"
+                android:textColor="@color/dialog_text_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+            <TextView
+                android:id="@+id/tvMobile"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/mobile"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvContactDetails" />
+
+            <EditText
+                android:id="@+id/etMobile"
+                style="@style/regular_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/enter_mobile_number"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="10"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMobile" />
+
+            <TextView
+                android:id="@+id/tvRelation"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/patient_relation"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etMaritalStatus" />
+
+            <TextView
+                android:id="@+id/tvPatientRelation"
+                style="@style/regular"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/father"
+                android:importantForAutofill="no"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                app:drawableEndCompat="@drawable/ic_dropdown"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvRelation" />
+
+            <TextView
+                android:id="@+id/tvContactDetails"
+                style="@style/lexend_medium_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:text="@string/contact_details"
+                android:textColor="@color/dialog_text_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPatientRelation" />
+
+            <EditText
+                android:id="@+id/etGuardianName"
+                style="@style/regular_edittext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/enter_name"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvPatientRelation"
+                app:layout_constraintTop_toBottomOf="@+id/tvRelation" />
+
+            <TextView
+                android:id="@+id/tvDateOfBirth"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/age_patient"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layGender" />
+
+            <LinearLayout
+                android:id="@+id/layAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDateOfBirth">
+
+                <TextView
+                    android:id="@+id/etYears"
+                    style="@style/regular"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    app:drawableEndCompat="@drawable/ic_dropdown"
+                    android:background="@drawable/edittext_bg"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:hint="@string/years"
+                    android:importantForAutofill="no"
+                    android:padding="@dimen/_10sdp"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black" />
+                <TextView
+                    android:id="@+id/etMonths"
+                    style="@style/regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    app:drawableEndCompat="@drawable/ic_dropdown"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@drawable/edittext_bg"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:hint="@string/months"
+                    android:importantForAutofill="no"
+                    android:padding="@dimen/_10sdp"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvMaritalStatus"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/marital_status"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvFamilyInfo" />
+
+            <TextView
+                android:id="@+id/etMaritalStatus"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/select"
+                android:importantForAutofill="no"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                app:drawableEndCompat="@drawable/ic_dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMaritalStatus" />
+
+
+            <TextView
+                android:id="@+id/tvBloodGroup"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/blood_group"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layAge" />
+
+            <TextView
+                android:id="@+id/etBloodGroup"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/select"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                app:drawableEndCompat="@drawable/ic_dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBloodGroup" />
+
+            <TextView
+                android:id="@+id/tvFamilyInfo"
+                style="@style/lexend_medium_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:text="@string/family_details"
+                android:textColor="@color/dialog_text_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etBloodGroup" />
+
+            <TextView
+                android:id="@+id/tvGender"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/gender"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etLastName" />
+
+            <LinearLayout
+                android:id="@+id/layGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvGender">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gender_button_selector_bg"
+                    android:fontFamily="@font/lexend_regular"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/male"
+                    android:textAllCaps="false"
+                    android:textColor="@color/edittext_hint"
+                    android:textSize="@dimen/_14ssp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnFeMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:background="@drawable/gender_button_selector_bg"
+                    android:fontFamily="@font/lexend_regular"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/female"
+                    android:textAllCaps="false"
+                    android:textColor="@color/edittext_hint"
+                    android:textSize="@dimen/_14ssp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnTg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gender_button_selector_bg"
+                    android:fontFamily="@font/lexend_regular"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/tg"
+                    android:textAllCaps="false"
+                    android:textColor="@color/edittext_hint"
+                    android:textSize="@dimen/_14ssp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvAddress"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/address_line"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAddressInfo" />
+
+            <EditText
+                android:id="@+id/etAddress"
+                style="@style/regular_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/enter_address"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
+
+            <TextView
+                android:id="@+id/tvAddress1"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/address2"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etAddress" />
+
+            <EditText
+                android:id="@+id/etAddress1"
+                style="@style/regular_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/enter_address"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAddress1" />
+
+
+            <TextView
+                android:id="@+id/tvDistrict"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/district"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etAddress1" />
+
+            <TextView
+                android:id="@+id/etDistrict"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/select_district"
+                android:importantForAutofill="no"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                app:drawableEndCompat="@drawable/ic_dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDistrict" />
+
+            <TextView
+                android:id="@+id/tvCity"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/city2"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etDistrict" />
+
+            <TextView
+                android:id="@+id/etCity"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/select_city"
+                android:importantForAutofill="no"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                app:drawableEndCompat="@drawable/ic_dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCity" />
+
+
+            <TextView
+                android:id="@+id/tvBlock"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/block"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etCity" />
+
+            <TextView
+                android:id="@+id/etBlock"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/select_block"
+                android:importantForAutofill="no"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                app:drawableEndCompat="@drawable/ic_dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBlock" />
+
+            <TextView
+                android:id="@+id/tvPincode"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/pincode_title"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etBlock" />
+
+            <EditText
+                android:id="@+id/etPinCode"
+                style="@style/regular_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/enter_pincode"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="6"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPincode" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cbNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/checkbox_selector_bg"
+                android:fontFamily="@font/lexend_regular"
+                android:paddingStart="@dimen/_5sdp"
+                android:text="@string/sms_notifications"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etPinCode" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRegister"
+                style="@style/lexend_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/button_selector_bg"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/register"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/cbNotification" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

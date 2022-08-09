@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_5sdp"
+    android:background="@color/white"
+    android:padding="@dimen/_15sdp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgDr"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:src="@drawable/dr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="@dimen/_10sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/default_dot"
+        app:layout_constraintBottom_toBottomOf="@id/imgDr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/green" />
+
+    <TextView
+        android:id="@+id/tvDrName"
+        style="@style/semi_bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:text="@string/dr_banerjee"
+        android:textAlignment="textStart"
+        android:textColor="@color/dialog_text_color"
+        app:layout_constraintEnd_toStartOf="@+id/tvChat"
+        app:layout_constraintStart_toEndOf="@+id/imgDr"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDrType"
+        style="@style/regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:alpha="0.6"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        android:text="@string/psychiatrist"
+        android:textAlignment="textStart"
+        android:textColor="@color/theme_color"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/tvChat"
+        app:layout_constraintStart_toEndOf="@+id/imgDr"
+        app:layout_constraintTop_toBottomOf="@+id/tvDrName" />
+
+    <TextView
+        android:id="@+id/tvChat"
+        style="@style/regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:background="@drawable/light_blue_rounded_border"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="@string/chats"
+        android:textColor="@color/login_title_color"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toStartOf="@+id/tvReconsult"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvReconsult"
+        style="@style/regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector_bg"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="@string/free_call"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgConsultation"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_50sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_consultation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDrName"
+        app:tint="@color/login_title_color" />
+
+    <TextView
+        android:id="@+id/tvConsultation"
+        style="@style/regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:text="@string/_1_prescription"
+        android:textColor="@color/edittext_hint"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toEndOf="@+id/imgConsultation"
+        app:layout_constraintTop_toBottomOf="@+id/tvDrName" />
+
+    <ImageView
+        android:id="@+id/imgMedicalReport"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_reports"
+        app:layout_constraintStart_toEndOf="@+id/tvConsultation"
+        app:layout_constraintTop_toBottomOf="@+id/tvDrName"
+        app:tint="@color/login_title_color" />
+
+    <TextView
+        style="@style/regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:text="@string/_2_medical_records"
+        android:textColor="@color/edittext_hint"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toEndOf="@+id/imgMedicalReport"
+        app:layout_constraintTop_toBottomOf="@+id/tvDrName" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        style="@style/regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_50sdp"
+        android:text="@string/_2_mins_ago"
+        android:textColor="@color/edittext_hint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgConsultation" />
+
+    <ImageView
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/image_dot"
+        app:layout_constraintStart_toEndOf="@+id/tvTime"
+        app:layout_constraintTop_toBottomOf="@+id/imgConsultation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

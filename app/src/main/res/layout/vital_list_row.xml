@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_5sdp"
+    android:background="@color/card_bg"
+    android:padding="@dimen/_10sdp">
+
+    <TextView
+        android:id="@+id/tvVitalName"
+        style="@style/semi_bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/red_cedar_asthma"
+        android:textAlignment="textStart"
+        android:textColor="@color/dialog_text_color"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintEnd_toStartOf="@+id/imgDelete"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgDelete"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#FF4040" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        style="@style/regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:layout_weight="0.2"
+        android:text="@string/result"
+        android:textColor="@color/allergy_text_color"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVitalName" />
+
+    <TextView
+        android:id="@+id/tvResultValue"
+        style="@style/regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:text="@string/yes"
+        android:textColor="@color/allergy_hint_text_color"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toEndOf="@+id/tvResult"
+        app:layout_constraintTop_toBottomOf="@+id/tvVitalName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

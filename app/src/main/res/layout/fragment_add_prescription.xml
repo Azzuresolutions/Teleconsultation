@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <include
+        android:id="@+id/layToolbar"
+        layout="@layout/layout_back_arrow_title_actionbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/laySendPreview"
+        app:layout_constraintTop_toBottomOf="@+id/layToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layGeneralExamination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layGeneralExaminationTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_10sdp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imgGeneralExamination"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_general_examination"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/regular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:text="@string/general_examination"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/imgDropdown"
+                        app:layout_constraintStart_toEndOf="@+id/imgGeneralExamination"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imgDropdown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_dropdown"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layGeneralExaminationDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/layGeneralExaminationTitle">
+
+                    <TextView
+                        android:id="@+id/tvChiefComplaint"
+                        style="@style/regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:text="@string/chief_complaints_history_of"
+                        android:textColor="@color/login_title_color"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnDiabetes"
+                        style="@style/regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:background="@drawable/gender_button_selector_bg"
+                        android:text="@string/diabetes"
+                        android:textColor="@color/edittext_hint"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvChiefComplaint" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnSmoking"
+                        style="@style/regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:background="@drawable/gender_button_selector_bg"
+                        android:text="@string/smoking"
+                        android:textColor="@color/edittext_hint"
+                        app:layout_constraintStart_toEndOf="@+id/btnDiabetes"
+                        app:layout_constraintTop_toBottomOf="@+id/tvChiefComplaint" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnHypertension"
+                        style="@style/regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:background="@drawable/gender_button_selector_bg"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:text="@string/hypertension"
+                        android:textColor="@color/edittext_hint"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btnDiabetes" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnAlcoholIntake"
+                        style="@style/regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:background="@drawable/gender_button_selector_bg"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:text="@string/alcohol_intake"
+                        android:textColor="@color/edittext_hint"
+                        app:layout_constraintStart_toEndOf="@+id/btnHypertension"
+                        app:layout_constraintTop_toBottomOf="@+id/btnDiabetes" />
+
+                    <TextView
+                        android:id="@+id/tvNote"
+                        style="@style/regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:text="@string/note"
+                        android:textColor="@color/login_title_color"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btnHypertension" />
+
+                    <EditText
+                        style="@style/regular_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:autofillHints="no"
+                        android:background="@drawable/edittext_bg"
+                        android:gravity="top"
+                        android:hint="@string/enter_additional_info"
+                        android:inputType="textMultiLine"
+                        android:lines="3"
+                        android:padding="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNote" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layAllergy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                app:layout_constraintTop_toBottomOf="@+id/layGeneralExamination">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layAllergyTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_10sdp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imgAllergy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_allergy"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/regular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:text="@string/allergy"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/imgDropdownAllergy"
+                        app:layout_constraintStart_toEndOf="@+id/imgAllergy"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imgDropdownAllergy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_dropdown"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layAllergyDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/layAllergyTitle">
+
+                    <TextView
+                        android:id="@+id/etAllergy"
+                        style="@style/regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:text="@string/enter_allergy"
+                        android:textColor="@color/login_title_color"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/etEnterAllergy"
+                        style="@style/regular_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:autofillHints=""
+                        android:background="@drawable/edittext_bg"
+                        android:gravity="top"
+                        android:hint="@string/enter_allergy"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:padding="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etAllergy" />
+
+                    <TextView
+                        android:id="@+id/tvStillHave"
+                        style="@style/regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:text="@string/still_have_allergy"
+                        android:textColor="@color/login_title_color"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etEnterAllergy" />
+
+                    <LinearLayout
+                        android:id="@+id/layStillHave"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvStillHave">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnYes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/gender_button_selector_bg"
+                            android:fontFamily="@font/lexend_regular"
+                            android:padding="@dimen/_10sdp"
+                            android:text="@string/yes"
+                            android:textAllCaps="false"
+                            android:textColor="@color/edittext_hint"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_10sdp"
+                            android:background="@drawable/gender_button_selector_bg"
+                            android:fontFamily="@font/lexend_regular"
+                            android:padding="@dimen/_10sdp"
+                            android:text="@string/no"
+                            android:textAllCaps="false"
+                            android:textColor="@color/edittext_hint"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnMaybe"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/gender_button_selector_bg"
+                            android:fontFamily="@font/lexend_regular"
+                            android:padding="@dimen/_10sdp"
+                            android:text="@string/maybe"
+                            android:textAllCaps="false"
+                            android:textColor="@color/edittext_hint"
+                            android:textSize="@dimen/_14ssp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layDuration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layStillHave">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvDuration"
+                                style="@style/regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:text="@string/duration"
+                                android:textColor="@color/login_title_color"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/layGender" />
+
+                            <TextView
+                                android:id="@+id/etDuration"
+                                style="@style/regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:background="@drawable/edittext_bg"
+                                android:hint="@string/select_duration"
+                                android:importantForAutofill="no"
+                                android:padding="@dimen/_10sdp"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/black"
+                                app:drawableEndCompat="@drawable/ic_dropdown"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvDistrict" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvSeverity"
+                                style="@style/regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/severity"
+                                android:textColor="@color/login_title_color"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/layGender" />
+
+                            <TextView
+                                android:id="@+id/etSeverity"
+                                style="@style/regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:background="@drawable/edittext_bg"
+                                android:hint="@string/select_severtiy"
+                                android:importantForAutofill="no"
+                                android:padding="@dimen/_10sdp"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/black"
+                                app:drawableEndCompat="@drawable/ic_dropdown"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvDistrict" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnAddToList"
+                        style="@style/regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:background="@drawable/blue_round_bg"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:text="@string/add_to_list"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layDuration" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnViewAddedAllergy"
+                        style="@style/regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:background="@drawable/active_button_bg"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:text="@string/view_added_allergy"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toEndOf="@+id/btnAddToList"
+                        app:layout_constraintTop_toBottomOf="@+id/layDuration" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layPrescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                app:layout_constraintTop_toBottomOf="@+id/layAllergy">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layPrescriptionTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_10sdp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imgPresription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_prescription"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/regular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:text="@string/prescription"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/imgDropdownPrescription"
+                        app:layout_constraintStart_toEndOf="@+id/imgPresription"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imgDropdownPrescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_dropdown"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layPrescriptionDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/layPrescriptionTitle">
+
+                    <TextView
+                        android:id="@+id/tvProvisionalDiagnosis"
+                        style="@style/regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:text="@string/provisional_diagnosis"
+                        android:textColor="@color/login_title_color"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/etProvisionalDiagnosis"
+                        style="@style/regular_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:autofillHints=""
+                        android:background="@drawable/edittext_bg"
+                        android:gravity="top"
+                        android:hint="@string/rash"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:padding="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvProvisionalDiagnosis" />
+
+                    <LinearLayout
+                        android:id="@+id/layFrequency"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etProvisionalDiagnosis">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvFrequency"
+                                style="@style/regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/frequency"
+                                android:textColor="@color/login_title_color"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/layGender" />
+
+                            <TextView
+                                android:id="@+id/etFrequency"
+                                style="@style/regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:background="@drawable/edittext_bg"
+                                android:hint="@string/hs"
+                                android:importantForAutofill="no"
+                                android:padding="@dimen/_10sdp"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/black"
+                                app:drawableEndCompat="@drawable/ic_dropdown"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvDistrict" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvDose"
+                                style="@style/regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dose"
+                                android:textColor="@color/login_title_color"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/layGender" />
+
+                            <TextView
+                                android:id="@+id/etDose"
+                                style="@style/regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:background="@drawable/edittext_bg"
+                                android:hint="@string/dose_count"
+                                android:importantForAutofill="no"
+                                android:padding="@dimen/_10sdp"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/black"
+                                app:drawableEndCompat="@drawable/ic_dropdown"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvDistrict" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvDoseType"
+                        style="@style/regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/dose_type"
+                        android:textColor="@color/login_title_color"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layFrequency" />
+
+                    <TextView
+                        android:id="@+id/etDoseType"
+                        style="@style/regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/edittext_bg"
+                        android:hint="@string/dose_hint"
+                        android:importantForAutofill="no"
+                        android:padding="@dimen/_10sdp"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        app:drawableEndCompat="@drawable/ic_dropdown"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDoseType" />
+
+                    <LinearLayout
+                        android:id="@+id/layNoOfDays"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etDoseType">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvNoOfDays"
+                                style="@style/regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/no_of_days"
+                                android:textColor="@color/login_title_color"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/layGender" />
+
+                            <TextView
+                                android:id="@+id/etNoOfDays"
+                                style="@style/regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:background="@drawable/edittext_bg"
+                                android:hint="@string/no_of_days_hint"
+                                android:importantForAutofill="no"
+                                android:padding="@dimen/_10sdp"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/black"
+                                app:drawableEndCompat="@drawable/ic_dropdown"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvDistrict" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvHowLong"
+                                style="@style/regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/how_long"
+                                android:textColor="@color/login_title_color"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/layGender" />
+
+                            <TextView
+                                android:id="@+id/etHowLong"
+                                style="@style/regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:background="@drawable/edittext_bg"
+                                android:hint="@string/how_long_hint"
+                                android:importantForAutofill="no"
+                                android:padding="@dimen/_10sdp"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/black"
+                                app:drawableEndCompat="@drawable/ic_dropdown"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvDistrict" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnAddPrescriptionToList"
+                        style="@style/regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:background="@drawable/blue_round_bg"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:text="@string/add_to_list"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layNoOfDays" />
+
+                    <LinearLayout
+                        android:id="@+id/prescriptionTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@color/card_bg2"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@+id/btnAddPrescriptionToList">
+
+                        <TextView
+                            style="@style/semi_bold"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_1sdp"
+                            android:layout_weight="1.5"
+                            android:text="@string/medicines"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/dialog_text_color"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <TextView
+                            style="@style/semi_bold"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_1sdp"
+                            android:layout_weight="1"
+                            android:lines="1"
+                            android:text="@string/frequency_title"
+                            android:textAlignment="center"
+                            android:textColor="@color/dialog_text_color"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <TextView
+                            style="@style/semi_bold"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_1sdp"
+                            android:layout_weight="1"
+                            android:text="@string/dose_title"
+                            android:textAlignment="center"
+                            android:textColor="@color/dialog_text_color"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <TextView
+                            style="@style/semi_bold"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_1sdp"
+                            android:layout_weight="1"
+                            android:text="@string/type"
+                            android:textAlignment="center"
+                            android:textColor="@color/dialog_text_color"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <TextView
+                            style="@style/semi_bold"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_1sdp"
+                            android:layout_weight="1"
+                            android:text="@string/three_week"
+                            android:textAlignment="center"
+                            android:textColor="@color/dialog_text_color"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_marginHorizontal="@dimen/_2sdp"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_delete"
+                            android:visibility="invisible"
+                            app:tint="#FF4040" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvPrescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@+id/prescriptionTitle"
+                        tools:itemCount="5"
+                        tools:listitem="@layout/prescription_list_row" />
+
+                    <TextView
+                        android:id="@+id/tvGeneralAdvice"
+                        style="@style/regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:text="@string/general_advice"
+                        android:textColor="@color/login_title_color"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rvPrescription" />
+
+                    <EditText
+                        android:id="@+id/etGeneralAdvice"
+                        style="@style/regular_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:autofillHints=""
+                        android:background="@drawable/edittext_bg"
+                        android:gravity="top"
+                        android:hint="@string/general_advice_hint"
+                        android:inputType="textMultiLine"
+                        android:lines="3"
+                        android:padding="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvGeneralAdvice" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/laySendPreview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPreview"
+            style="@style/lexend_medium_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bottom_green_round_border"
+            android:enabled="true"
+            android:text="@string/preview"
+            android:textColor="@color/green" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSend"
+            style="@style/lexend_medium_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:background="@drawable/button_selector_bg"
+            android:enabled="true"
+            android:text="@string/send"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

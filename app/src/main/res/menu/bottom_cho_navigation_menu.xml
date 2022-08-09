@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/choHomeFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="@string/menu_home" />
+    <item
+        android:id="@+id/action_registered"
+        android:enabled="true"
+        android:icon="@drawable/ic_reports"
+        android:title="@string/registered" />
+    <item
+        android:id="@+id/action_add_patient"
+        android:enabled="true"
+        android:title="@string/menu_add_patient" />
+
+    <item
+        android:id="@+id/action_cases"
+        android:enabled="true"
+        android:icon="@drawable/ic_consultation"
+        android:title="@string/menu_cases" />
+
+    <item
+        android:id="@+id/action_profile"
+        android:enabled="true"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/menu_profile" />
+</menu>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/doctorHomeFragment">
+
+    <fragment
+        android:id="@+id/doctorHomeFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.doctor.DoctorHomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_doctor_home" />
+
+    <fragment
+        android:id="@+id/action_appointments"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.doctor.AppointmentsFragment"
+        android:label="AppointmentsFragment"
+        tools:layout="@layout/fragment_show_allergies_list">
+        <action
+            android:id="@+id/prescriptionFragment"
+            app:destination="@id/prescriptionFragment" />
+
+        <action
+            android:id="@+id/doctorRxFragment"
+            app:destination="@id/doctorRxFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/prescriptionFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.doctor.DoctorPrescription"
+        android:label="PrescriptionFragment"
+        tools:layout="@layout/fragment_add_prescription">
+        <action
+            android:id="@+id/action_added_allergy"
+            app:destination="@id/addedAllergyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/action_profile"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.doctor.DoctorProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_dr_profile">
+        <action
+            android:id="@+id/action_notification"
+            app:destination="@id/notificationFragment" />
+
+
+        <action
+            android:id="@+id/action_view_doctor_profile"
+            app:destination="@id/viewDoctorProfileFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.patient.NotificationFragment"
+        android:label="NotificationFragment"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/viewDoctorProfileFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.doctor.ViewDoctorProfileFragment"
+        android:label="ViewDoctorProfileFragment"
+        tools:layout="@layout/fragment_view_dr_profile">
+        <action
+            android:id="@+id/action_edit_dr_profile"
+            app:destination="@+id/editDoctorProfileFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/editDoctorProfileFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.doctor.EditDoctorProfileFragment"
+        android:label="EditDoctorProfileFragment"
+        tools:layout="@layout/fragment_doctor_edit_profile" />
+
+    <fragment
+        android:id="@+id/addedAllergyFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.doctor.AllergyListFragment"
+        android:label="AllergyListFragment"
+        tools:layout="@layout/fragment_show_allergies_list" />
+
+    <fragment
+        android:id="@+id/doctorRxFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.doctor.DoctorRxFragment"
+        android:label="doctorRxFragment"
+        tools:layout="@layout/fragment_rx_doctor" />
+
+
+</navigation>

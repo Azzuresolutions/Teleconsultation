@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_5sdp"
+    android:background="@color/white"
+    android:padding="@dimen/_15sdp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgDr"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:src="@drawable/ic_pic_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="@dimen/_10sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/default_dot"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/imgDr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/green" />
+
+
+    <TextView
+        android:id="@+id/tvDrName"
+        style="@style/semi_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:textAlignment="textStart"
+        android:textColor="@color/dialog_text_color"
+        app:layout_constraintStart_toEndOf="@+id/imgDr"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvStatus"
+        style="@style/regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        android:text="@string/status_incomplete"
+        android:textAlignment="textStart"
+        android:textColor="@color/dialog_text_color"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toEndOf="@+id/imgDr"
+        app:layout_constraintTop_toBottomOf="@+id/tvDrName" />
+
+    <TextView
+        android:id="@+id/tvConsultBy"
+        style="@style/regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        android:text="@string/consulted_by_dr_ravi_sharma"
+        android:textAlignment="textStart"
+        android:textColor="@color/dialog_text_color"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toEndOf="@+id/imgDr"
+        app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
+
+    <TextView
+        android:id="@+id/tvConsultDate"
+        style="@style/regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        android:text="@string/consulted_on_11_apr_2022"
+        android:textAlignment="textStart"
+        android:textColor="@color/dialog_text_color"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toEndOf="@+id/imgDr"
+        app:layout_constraintTop_toBottomOf="@+id/tvConsultBy" />
+
+    <TextView
+        android:id="@+id/tvQuery"
+        style="@style/regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        android:text="@string/query"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvConsultDate" />
+
+    <TextView
+        android:id="@+id/tvQueryValue"
+        style="@style/regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        android:textAlignment="textStart"
+        android:textColor="@color/edittext_hint"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgDr"
+        app:layout_constraintTop_toBottomOf="@+id/tvConsultDate" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tvChat"
+        style="@style/regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:background="@drawable/light_blue_rounded_border"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="@string/view_details"
+        android:textColor="@color/login_title_color"
+        app:layout_constraintEnd_toStartOf="@+id/btnTryAgain"
+        app:layout_constraintHorizontal_weight="1.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQueryValue" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnTryAgain"
+        style="@style/regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:background="@drawable/active_button_bg"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="@string/try_again"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/tvChat"
+        app:layout_constraintTop_toBottomOf="@+id/tvQueryValue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

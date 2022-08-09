@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <include
+        android:id="@+id/layToolbar"
+        layout="@layout/layout_back_arrow_title_actionbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/layAddMember"
+        app:layout_constraintTop_toBottomOf="@+id/layToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvRelation"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/relation"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/etRelation"
+                style="@style/regular"
+                app:drawableEndCompat="@drawable/ic_dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/select_family_member"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textColorHint="@color/edittext_hint"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvRelation" />
+
+            <TextView
+                android:id="@+id/tvFirstName"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/first_name"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etRelation" />
+
+            <EditText
+                android:id="@+id/etFirstName"
+                style="@style/regular_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/enter_first_name"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="32"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvFirstName" />
+
+            <TextView
+                android:id="@+id/tvLastName"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/title_last_name"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etFirstName" />
+
+            <EditText
+                android:id="@+id/etLastName"
+                style="@style/regular_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/enter_last_name"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="32"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLastName" />
+
+            <TextView
+                android:id="@+id/tvGender"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/gender"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etLastName" />
+
+            <LinearLayout
+                android:id="@+id/layGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvGender">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gender_button_selector_bg"
+                    android:fontFamily="@font/lexend_regular"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/male"
+                    android:textAllCaps="false"
+                    android:textColor="@color/edittext_hint"
+                    android:textSize="@dimen/_14ssp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnFeMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:background="@drawable/gender_button_selector_bg"
+                    android:fontFamily="@font/lexend_regular"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/female"
+                    android:textAllCaps="false"
+                    android:textColor="@color/edittext_hint"
+                    android:textSize="@dimen/_14ssp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnTg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gender_button_selector_bg"
+                    android:fontFamily="@font/lexend_regular"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/tg"
+                    android:textAllCaps="false"
+                    android:textColor="@color/edittext_hint"
+                    android:textSize="@dimen/_14ssp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDateOfBirth"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="@string/title_age"
+                android:textColor="@color/login_title_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layGender" />
+
+            <TextView
+                android:id="@+id/etDateOfBirth"
+                style="@style/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:hint="@string/select_dob"
+                android:importantForAutofill="no"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                app:drawableEndCompat="@drawable/ic_calendar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDateOfBirth" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/layAddMember"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAddFamilyMember"
+            style="@style/lexend_medium_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/button_selector_bg"
+            android:enabled="false"
+            android:text="@string/add_member"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

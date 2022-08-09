@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.patient.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_find_doctor"
+            app:destination="@id/action_getcare"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/action_reports"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.patient.ReportsFragment"
+        android:label="ReportsFragment"
+        tools:layout="@layout/fragment_reports" />
+
+    <fragment
+        android:id="@+id/action_getcare"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.patient.FindDoctorFragment"
+        android:label="FindDoctorFragment"
+        tools:layout="@layout/fragment_find_doctor">
+        <action
+            android:id="@+id/action_waiting_room"
+            app:destination="@id/waiting_fragment"
+            app:popUpTo="@id/homeFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/action_consultation"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.patient.ConsultationFragment"
+        android:label="ConsultationFragment"
+        tools:layout="@layout/fragment_consultation">
+        <action
+            android:id="@+id/action_waiting_room"
+            app:destination="@id/waiting_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/action_profile"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.patient.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_add_member"
+            app:destination="@id/addFamilyMember" />
+        <action
+            android:id="@+id/member_list"
+            app:destination="@id/familyMembers" />
+        <action
+            android:id="@+id/action_notification"
+            app:destination="@id/notificationFragment" />
+
+        <action
+            android:id="@+id/action_edit_profile"
+            app:destination="@id/editProfileFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/waiting_fragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.patient.WaitingFragment"
+        android:label="WaitingFragment"
+        tools:layout="@layout/fragment_waiting_room">
+        <action
+            android:id="@+id/action_waiting_room2"
+            app:destination="@id/waiting_fragment2"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/waiting_fragment2"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.patient.WaitingFragment2"
+        android:label="WaitingFragment2"
+        tools:layout="@layout/fragment_waiting_room2">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/addFamilyMember"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.patient.AddFamilyMemberFragment"
+        android:label="AddFamilyMember"
+        tools:layout="@layout/fragment_add_member">
+        <action
+            android:id="@+id/action_family_members"
+            app:destination="@id/familyMembers"
+            app:popUpTo="@id/homeFragment" />
+        <argument
+            android:name="familyMemberData"
+            app:argType="com.volumetree.newswasthyaingitopd.model.responseData.patient.FamilyMemberData"
+            app:nullable="true" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/familyMembers"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.patient.FamilyMembersFragment"
+        android:label="FamilyMembers"
+        tools:layout="@layout/fragment_family_members">
+        <action
+            android:id="@+id/action_add_member_from_list"
+            app:destination="@id/addFamilyMember" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.patient.NotificationFragment"
+        android:label="NotificationFragment"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.volumetree.newswasthyaingitopd.fragments.patient.EditProfileFragment"
+        android:label="EditProfileFragment"
+        tools:layout="@layout/fragment_edit_profile" />
+
+</navigation>

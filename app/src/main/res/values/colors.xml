@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#020860</color>
+    <color name="colorPrimary">#020860</color>
+    <color name="colorPrimaryDark">#020860</color>
+    <color name="colorAccent">#020860</color>
+    <color name="purple_500">#020860</color>
+    <color name="purple_700">#020860</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="unselect_gender">#818082</color>
+    <color name="white">#FFFFFF</color>
+    <color name="chart_male">#044BB4</color>
+    <color name="chart_female">#F878A9</color>
+    <color name="chart_tg">#690098</color>
+
+    <color name="colorGrey">#FFFFFF</color>
+    <color name="chart_bg">#F6F6F6</color>
+    <color name="header_font_color">#020860</color>
+    <color name="login_title_color">#2CB7DF</color>
+    <color name="transparent">#00000000</color>
+    <color name="edittext_border">#CDCDCD</color>
+    <color name="edittext_hint">#818082</color>
+
+    <color name="opt_button_invactive">#80263077</color>
+    <color name="opt_button_active">#00A500</color>
+
+    <color name="green">#00A500</color>
+    <color name="red">#FF0057</color>
+    <color name="offline_color">#251F31</color>
+
+    <color name="gender_unselect_bg">#16818082</color>
+    <color name="gender_select_bg">#3BACD6</color>
+    <color name="background">#E5E5E5</color>
+
+    <color name="theme_color">#020860</color>
+    <color name="shrine_pink_100">#818082</color>
+
+    <color name="text_start">#263077</color>
+    <color name="text_end">#2CB7DF</color>
+
+    <color name="text_color">#2CB7DF</color>
+
+    <color name="orange_color">#ED5A4B</color>
+    <color name="purple_color">#7A7FD1</color>
+    <color name="yellow_color">#F3BA35</color>
+    <color name="orange2_color">#EF7C4F</color>
+    <color name="red_color">#F2726F</color>
+    <color name="blue_color">#3BACD6</color>
+
+    <color name="opd_inactive_button_color">#16818082</color>
+
+    <color name="alpha_color">#9297BB</color>
+    <color name="select_list_bg">#EFFBFF</color>
+
+    <color name="dialog_text_color">#1B1B1B</color>
+    <color name="opacity_dialog_text_color">#801B1B1B</color>
+
+    <color name="textContent">#8793AA</color>
+    <color name="tabItemTextSelectedColor">#8793AA</color>
+    <color name="seekbar_bg">#32FFFFFF</color>
+
+    <color name="grey_bg">#F0F0F5</color>
+    <color name="doctor_offline_bg">#333333</color>
+    <color name="online_text_color">#8ED7FF</color>
+
+    <color name="dr_profile_title_color">#8C8C8C</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="card_bg">#F5FDFF</color>
+    <color name="card_bg2">#e5f5f9</color>
+    <color name="allergy_text_color">#282828</color>
+    <color name="allergy_hint_text_color">#515151</color>
+
+    <color name="colorEtText">#101010</color>
+
+    <color name="dimGrayColor">#0A000000</color>
+    <color name="bluegrid">#E7F9FF</color>
+    <color name="darkgreenfooter">#548235</color>
+    <color name="greenDark">#578B33</color>
+
+    <color name="divider_opacity">#16000000</color>
+    <color name="tab_text">#80FFFFFF</color>
+
+</resources>
